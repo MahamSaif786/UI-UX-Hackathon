@@ -1,5 +1,4 @@
 import React from "react";
-import * as motion from "framer-motion/client";
 import { cn } from "@/lib/utils";
 import { integralCF } from "@/styles/fonts";
 import {
@@ -20,24 +19,15 @@ type ProductListSecProps = {
 const ProductListSec = ({ title, data, viewAllLink }: ProductListSecProps) => {
   return (
     <section className="max-w-frame mx-auto text-center">
-      <motion.h2
-        initial={{ y: "100px", opacity: 0 }}
-        whileInView={{ y: "0", opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
+      <h2
         className={cn([
           integralCF.className,
           "text-[32px] md:text-5xl mb-8 md:mb-14 capitalize",
         ])}
       >
         {title}
-      </motion.h2>
-      <motion.div
-        initial={{ y: "100px", opacity: 0 }}
-        whileInView={{ y: "0", opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.6, duration: 0.6 }}
-      >
+      </h2>
+      <div>
         <Carousel
           opts={{
             align: "start",
@@ -59,13 +49,13 @@ const ProductListSec = ({ title, data, viewAllLink }: ProductListSecProps) => {
           <div className="w-full px-4 sm:px-0 text-center">
             <Link
               href={viewAllLink}
-              className="w-full inline-block sm:w-[218px] px-[54px] py-4 border rounded-full hover:bg- hover:text-black text- transition-all font-medium text-sm sm:text-base border-black/10"
+              className="w-full inline-block sm:w-[218px] px-[54px] py-4 border rounded-full hover:bg-black hover:text-white text-black transition-all font-medium text-sm sm:text-base border-black/10"
             >
               View All
             </Link>
           </div>
         )}
-      </motion.div>
+      </div>
     </section>
   );
 };

@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import * as motion from "framer-motion/client";
 import { cn } from "@/lib/utils";
 import { integralCF } from "@/styles/fonts";
 import {
@@ -43,12 +42,7 @@ const Reviews = ({ data }: ReviewsProps) => {
 
   return (
     <section className="overflow-hidden">
-      <motion.div
-        initial={{ x: "100px", opacity: 0 }}
-        whileInView={{ x: "0", opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-      >
+      <div>
         <Carousel
           setApi={setApi}
           opts={{
@@ -58,18 +52,14 @@ const Reviews = ({ data }: ReviewsProps) => {
           className="relative w-full mb-6 md:mb-9"
         >
           <div className="relative flex items-end sm:items-center max-w-frame mx-auto mb-6 md:mb-10 px-4 xl:px-0">
-            <motion.h2
-              initial={{ y: "100px", opacity: 0 }}
-              whileInView={{ y: "0", opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.6, duration: 0.6 }}
+            <h2
               className={cn([
                 integralCF.className,
                 "text-[32px] leading-[36px] md:text-5xl capitalize mr-auto",
               ])}
             >
               OUR HAPPY CUSTOMERS
-            </motion.h2>
+            </h2>
             <div className="flex items-center space-x-1 ml-2">
               <CarouselPrevious variant="ghost" className="text-2xl">
                 <FaArrowLeft />
@@ -124,7 +114,7 @@ const Reviews = ({ data }: ReviewsProps) => {
             ))}
           </CarouselContent>
         </Carousel>
-      </motion.div>
+      </div>
     </section>
   );
 };
